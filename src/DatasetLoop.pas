@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  Datasnap.DBClient, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls;
+  Datasnap.DBClient, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls, System.Math;
 
 type
   TfDatasetLoop = class(TForm)
@@ -30,69 +30,31 @@ implementation
 procedure TfDatasetLoop.btDeletarParesClick(Sender: TObject);
 begin
   ClientDataSet.First;
-
   while not ClientDataSet.Eof do
-  begin
-    if ClientDataSet.FieldByName('Field2').AsInteger mod 2 = 0 then
-      ClientDataSet.Delete;
-
-    ClientDataSet.Next;
-  end;
+    begin
+      if ClientDataSet.FieldByName('Field2').AsInteger mod 2 = 0 then
+        ClientDataSet.Delete
+      else
+        ClientDataSet.Next;
+    end;
+  ClientDataSet.First;
 end;
 
 procedure TfDatasetLoop.FormCreate(Sender: TObject);
+var
+  x: Integer;
 begin
   ClientDataSet.CreateDataSet;
-
-  ClientDataSet.Append;
-  ClientDataSet.FieldByName('Field1').AsString := 'Field1';
-  ClientDataSet.FieldByName('Field2').AsInteger := 1;
-  ClientDataSet.Post;
-
-  ClientDataSet.Append;
-  ClientDataSet.FieldByName('Field1').AsString := 'Field2';
-  ClientDataSet.FieldByName('Field2').AsInteger := 2;
-  ClientDataSet.Post;
-
-  ClientDataSet.Append;
-  ClientDataSet.FieldByName('Field1').AsString := 'Field3';
-  ClientDataSet.FieldByName('Field2').AsInteger := 2;
-  ClientDataSet.Post;
-
-  ClientDataSet.Append;
-  ClientDataSet.FieldByName('Field1').AsString := 'Field4';
-  ClientDataSet.FieldByName('Field2').AsInteger := 1;
-  ClientDataSet.Post;
-
-  ClientDataSet.Append;
-  ClientDataSet.FieldByName('Field1').AsString := 'Field5';
-  ClientDataSet.FieldByName('Field2').AsInteger := 2;
-  ClientDataSet.Post;
-
-  ClientDataSet.Append;
-  ClientDataSet.FieldByName('Field1').AsString := 'Field6';
-  ClientDataSet.FieldByName('Field2').AsInteger := 2;
-  ClientDataSet.Post;
-
-  ClientDataSet.Append;
-  ClientDataSet.FieldByName('Field1').AsString := 'Field7';
-  ClientDataSet.FieldByName('Field2').AsInteger := 2;
-  ClientDataSet.Post;
-
-  ClientDataSet.Append;
-  ClientDataSet.FieldByName('Field1').AsString := 'Field8';
-  ClientDataSet.FieldByName('Field2').AsInteger := 1;
-  ClientDataSet.Post;
-
-  ClientDataSet.Append;
-  ClientDataSet.FieldByName('Field1').AsString := 'Field9';
-  ClientDataSet.FieldByName('Field2').AsInteger := 2;
-  ClientDataSet.Post;
-
-  ClientDataSet.Append;
-  ClientDataSet.FieldByName('Field1').AsString := 'Field10';
-  ClientDataSet.FieldByName('Field2').AsInteger := 1;
-  ClientDataSet.Post;
+  x := 1;
+  while x <= 10 do
+    begin
+      ClientDataSet.Append;
+      ClientDataSet.FieldByName('Field1').AsString := 'Field'+x.ToString;
+      ClientDataSet.FieldByName('Field2').AsInteger := RandomRange(1,3);
+      ClientDataSet.Post;
+      Inc(x);
+    end;
+  ClientDataSet.First;
 end;
 
 end.
