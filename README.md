@@ -22,8 +22,10 @@ Dica: antes de iniciar as alterações, leia todo o README.
 ## Implementações
 
 `Implementação 1: implemente um gerenciador de exceções no projeto. A cada exceção gerada, independente do ponto da aplicação que ocorra, deve passar pelo gerenciador, e a classe e mensagem da exceção devem ser salvas em um arquivo de log. Depois de salva a mensagem no log, a exceção deve ser levantada normalmente. Fica a critério do candidato se quiser criar uma tela específica para mostrar a exceção, ou se quiser tratar algumas exceções. Isso é opcional.`
+Solução: Foi criada um unit chamada TratarExcecao.pas, ela deve ser chamada em todas os Forms para que seja salvo log de erro.
 
 `Implementação 2: na tela ClienteServidor, implemente o comportamento da barra de progresso para mostrar o progresso da operação de envio de arquivos.`
+
 
 `Implementação 3 (opcional): na tela ClienteServidor, implemente o comportamento do botão "Enviar paralelo". Esse botão deve fazer a mesma coisa que o botão "Enviar sem erros", porém de forma paralelizada, com objetivo de ganhar performance. Pense em uma solução que irá funcionar mesmo que a constante QTD_ARQUIVOS_ENVIAR tivesse valores mais altos, como mil ou dez mil`
 
