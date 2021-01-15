@@ -11,6 +11,8 @@ object fMain: TfMain
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object btDatasetLoop: TButton
@@ -28,7 +30,8 @@ object fMain: TfMain
     Width = 169
     Height = 25
     Caption = 'Threads'
-    TabOrder = 1
+    TabOrder = 2
+    OnClick = btThreadsClick
   end
   object btStreams: TButton
     Left = 64
@@ -36,7 +39,7 @@ object fMain: TfMain
     Width = 169
     Height = 25
     Caption = 'ClienteServidor'
-    TabOrder = 2
+    TabOrder = 1
     OnClick = btStreamsClick
   end
 end

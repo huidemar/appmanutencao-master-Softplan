@@ -14,6 +14,7 @@ type
     procedure btDatasetLoopClick(Sender: TObject);
     procedure btStreamsClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure btThreadsClick(Sender: TObject);
   private
   public
   end;
@@ -24,18 +25,38 @@ var
 implementation
 
 uses
-  DatasetLoop, ClienteServidor;
+  DatasetLoop, ClienteServidor, Threads;
 
 {$R *.dfm}
 
 procedure TfMain.btDatasetLoopClick(Sender: TObject);
 begin
-  fDatasetLoop.Show;
+  try
+    Application.CreateForm(TfDatasetLoop, fDatasetLoop);
+    fDatasetLoop.ShowModal;
+  finally
+    fDatasetLoop.Free;
+  end;
 end;
 
 procedure TfMain.btStreamsClick(Sender: TObject);
 begin
-  fClienteServidor.Show;
+  try
+    Application.CreateForm(TfClienteServidor, fClienteServidor);
+    fClienteServidor.ShowModal;
+  finally
+    fClienteServidor.Free;
+  end;
+end;
+
+procedure TfMain.btThreadsClick(Sender: TObject);
+begin
+  try
+    Application.CreateForm(TfThreads, fThreads);
+    fThreads.ShowModal;
+  finally
+    fThreads.Free;
+  end;
 end;
 
 procedure TfMain.FormShow(Sender: TObject);

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2021/01/14 16:38:03.559,=C:\projetos\DRio\appmanutencao-master-Softplan\src\Unit1.pas</Transaction>
+    <Transaction>2021/01/14 16:38:19.302,=C:\Users\desenvolvedor5\Downloads\appmanutencao-master-main\src\Threads.pas</Transaction>
+    <Transaction>2021/01/14 16:39:18.328,C:\Users\desenvolvedor5\Downloads\appmanutencao-master-main\src\Threads.pas=</Transaction>
+    <Transaction>2021/01/14 16:39:29.361,C:\projetos\DRio\appmanutencao-master-Softplan\src\Threds.dfm=C:\projetos\DRio\appmanutencao-master-Softplan\src\Unit1.dfm</Transaction>
+    <Transaction>2021/01/14 16:39:29.361,C:\projetos\DRio\appmanutencao-master-Softplan\src\Threds.pas=C:\projetos\DRio\appmanutencao-master-Softplan\src\Unit1.pas</Transaction>
+    <Transaction>2021/01/14 16:39:50.138,C:\projetos\DRio\appmanutencao-master-Softplan\src\Threads.dfm=C:\projetos\DRio\appmanutencao-master-Softplan\src\Threds.dfm</Transaction>
+    <Transaction>2021/01/14 16:39:50.138,C:\projetos\DRio\appmanutencao-master-Softplan\src\Threads.pas=C:\projetos\DRio\appmanutencao-master-Softplan\src\Threds.pas</Transaction>
+  </Transactions>
+</BorlandProject>

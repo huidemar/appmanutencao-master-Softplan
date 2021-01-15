@@ -11,6 +11,8 @@ object fClienteServidor: TfClienteServidor
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
+  OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -22,7 +24,6 @@ object fClienteServidor: TfClienteServidor
     Height = 17
     Align = alBottom
     TabOrder = 0
-    ExplicitWidth = 347
   end
   object btEnviarSemErros: TButton
     Left = 56
@@ -30,6 +31,8 @@ object fClienteServidor: TfClienteServidor
     Width = 113
     Height = 25
     Caption = 'Enviar sem erros'
+    DoubleBuffered = False
+    ParentDoubleBuffered = False
     TabOrder = 1
     OnClick = btEnviarSemErrosClick
   end
@@ -49,5 +52,6 @@ object fClienteServidor: TfClienteServidor
     Height = 25
     Caption = 'Enviar paralelo'
     TabOrder = 3
+    OnClick = btEnviarParaleloClick
   end
 end
